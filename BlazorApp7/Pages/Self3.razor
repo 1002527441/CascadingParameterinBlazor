@@ -1,0 +1,13 @@
+﻿<div class="bg-white p-3" style="color: #000;">
+    <h3>Self3</h3>
+    <p>GrandValue: @GrandValue</p>
+    <input type="text" @bind-value="@GrandValue" />
+</div>
+
+@code {
+    /// <summary>
+    /// Name参数必须与Name带有CascadingValue组件的属性匹配，如果我们没有注明Name，则会通过类型匹配一个最相似的属性
+    /// </summary>
+    [CascadingParameter(Name = "GrandValue")]
+    string GrandValue { get; set; }
+}

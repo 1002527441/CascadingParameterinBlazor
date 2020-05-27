@@ -5,3 +5,27 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+<a class="btn btn-danger"  href="Grand3">Grand3</a>
+<a class="btn btn-danger" href="Parent1">Parent1</a>
+<a class="btn btn-danger" href="Parent2">Parent2</a>
+<a class="btn btn-danger" href="Parent3">Parent3</a>
+
+
+
+<CascadingValue Value="32340">
+
+</CascadingValue>
+
+<BlazorApp7.Data.Mycomp></BlazorApp7.Data.Mycomp>
+
+@MyRender
+@AnotherRender
+@RenderValue("Henry")
+
+@code{
+    RenderFragment MyRender = (builder) => builder.AddMarkupContent(0, "<span>当前输出来自：Index.razor 组件， MyRender 字段。 </span>");
+    RenderFragment AnotherRender =@<div>模板写法的RenderFragment</div>;
+
+RenderFragment<object> RenderValue = value => @<div> render value :@value</div>;
+
+}
